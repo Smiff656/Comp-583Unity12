@@ -10,7 +10,10 @@
     <div class="container mx-auto px-4 py-8">
         <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 gap-4">
             <!-- Replace the image URLs, titles, and links with your own data -->
-            {% for i in range(1, 11) %}
+            <template>
+            <h2>service 1</h2>
+            <img src="https://cdn.glitch.global/85d7d8fd-6896-409c-9553-6a1f802e8123/istockphoto-1132874986-612x612.jpg?v=1679555732850" width="214" height="204">
+            </template>
             <a href="{{ 'page' + i|string + '.html' }}" class="bg-white rounded-md shadow-lg p-4 flex flex-col items-center">
                 <img class="h-32 w-32 rounded-full object-cover" src="https://via.placeholder.com/150" alt="Service {{ i }} Photo">
                 <h3 class="mt-4 text-xl font-semibold">Service {{ i }}</h3>

@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.16/dist/tailwind.min.css" rel="stylesheet">
+    <style>
+        .slide {
+            display: none;
+        }
+
+        .slide.active {
+            display: block;
+        }
+    </style>
+    <title>Image Slider with Tailwind CSS</title>
+</head>
+<body class="bg-gray-100 min-h-screen">
+    <div class="container mx-auto px-4 py-8">
+        <div class="relative">
+            <div id="slider" class="w-full overflow-hidden rounded-md">
+                <!-- Add your images here -->
+                <img class="slide active w-full" src="https://via.placeholder.com/900x300?text=Image+1" alt="Image 1">
+                <img class="slide w-full" src="https://via.placeholder.com/900x300?text=Image+2" alt="Image 2">
+                <img class="slide w-full" src="https://via.placeholder.com/900x300?text=Image+3" alt="Image 3">
+            </div>
+            <button id="prev" class="absolute left-0 top-1/2 bg-white bg-opacity-50 p-2 rounded-md transform -translate-y-1/2 focus:outline-none">
+                <svg class="w-6 h-6 text-gray-600" viewBox="0 0 20 20" fill="currentColor">
+                    <path fill-rule="evenodd" d="M12.707 5.293a1 1 0 010 1.414L9.414 10l3.293 3.293a1 1 0 01-1.414 1.414l-4-4a1 1 0 010-1.414l4-4a1 1 0 011.414 0z" clip-rule="evenodd"/>
+                </svg>
+            </button>
+            <button id="next" class="absolute right-0 top-1/2 bg-white bg-opacity-50 p-2 rounded-md transform -translate-y-1/2 focus:outline-none">
+                <svg class="w-6 h-6 text-gray-600" viewBox="0 0 20 20" fill="currentColor">
+                    <path fill-rule="evenodd" d="M7.293 14.707a1 1 0 010-1.414L10.586 10 7.293 6.707a1 1 0 011.414-1.414l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414 0z" clip-rule="evenodd"/>
+                </svg>
+            </button>
+        </div>
+    </div>
+    <script>
+        const slides = document.querySelectorAll('.slide');
+        const prev = document.getElementById('prev');
+        const next = document.getElementById('next');
+
+        let activeSlide = 0;
+
+        function showSlide(index) {
+            slides.forEach(slide => slide.classList.remove('active'));
+            slides[index].classList.add('active');
+        }
+
+        function nextSlide() {
+            activeSlide = (activeSlide + 1) % slides.length;
+            showSlide(activeSlide);
+        }
+
+        function prevSlide() {
+            activeSlide = (activeSlide - 1 + slides.length) % slides.length;
+            showSlide(activeSlide);
+        }
+
+        prev.addEventListener('click', prevSlide);
+        next.addEventListener('click', nextSlide);
+
+        setInterval(nextSlide, 5000); // Change the interval time (in milliseconds) to control the speed of the slider
+    </script>
+</body>
+</html>
