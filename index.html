@@ -2,151 +2,52 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.16/dist/tailwind.min.css" rel="stylesheet">
-    <title>Unity Services Prototype</title>
+    <title>Unity Services Website</title>
+    <link rel="stylesheet" href="styles.css">
 </head>
-<body class="bg-gray-100 min-h-screen">
-    <div class="container mx-auto px-4 py-8">
-        <div class="relative">
-            <input type="text" id="search-input" onkeyup="filterServices()" class="w-full p-2 pl-10 bg-white rounded-md shadow-lg focus:outline-none focus:ring-2 focus:ring-blue-500" placeholder="Search services...">
-            <svg class="absolute top-3 left-3 w-6 h-6 text-gray-400" fill="none" viewbox="0 0 24 24" stroke="currentColor">
-                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
-            </svg>
-            <ul id="suggestion-list" class="hidden absolute w-full mt-1 bg-white rounded-md shadow-lg p-2">
-                <!-- Your services suggestions will be populated here -->
-            </ul>
+<body>
+    <!-- Navbar Section -->
+  <nav class="navbar">
+    <div class="navbar__container">
+        <a href="/" id="navbar__logo">UNITY SERVICES</a>
+        <div class="navbar__toggle" id="mobile-menu">
+            <span class="bar"></span>
+            <span class="bar"></span>
+            <span class="bar"></span>
+        </div>
+        <ul class="navbar__menu">
+            <li class="navbar__item">
+                <a href="/" class="navbar__links">Home</a>
+            </li>
+            <li class="navbar__item">
+                <a href="/tech.html" class="navbar__links">Tech</a>
+            </li>
+            <li class="navbar__item">
+                <a href="/" class="navbar__links">Services</a>
+            </li>
+            <li class="navbar__btn">
+                <a href="/" class="button">Sign Up</a>
+            </li>
+        </ul>
+    </div>
+  </nav>
+  <!-- Hero Section-->
+  <div class="main">
+    <div class="main__container">
+        <div class="main__content">
+            <h1>Get Help Easy and Fast</h1>
+            <h2>All the Services that You Need</h2>
+            <p>Only Certified Services.</p>
+            <button class="main__btn"><a href="/">Get Started</a></button>
+        </div>
+        <div class="main__img--container">
+            <img src="https://cdn.glitch.global/db8fa927-aab7-43f7-bf5e-7d622c442233/pic1.jpg?v=1680576927468" alt="pic" id="main__img">
         </div>
     </div>
-    <script>
-        const services = [
-            "Web Development",
-            "Design",
-            "Mechanic",
-            "Photographer",
-            "Plumber",
-            "Translation",
-            "Videographer",
-            "Voice Over",
-            "Writing",
-            "IT Support"
-        ];
+  </div>
 
-        const input = document.getElementById('search-input');
-        const list = document.getElementById('suggestion-list');
-
-        function filterServices() {
-            const search = input.value.toLowerCase();
-            const suggestions = services.filter(service => service.toLowerCase().includes(search));
-
-            if (search.length > 0) {
-                list.innerHTML = suggestions.map(service => `<li class="p-2 hover:bg-gray-200 cursor-pointer">${service}</li>`).join('');
-                list.classList.remove('hidden');
-            } else {
-                list.classList.add('hidden');
-            }
-        }
-
-        input.addEventListener('focus', () => {
-            if (input.value.length > 0) {
-                list.classList.remove('hidden');
-            }
-        });
-
-        input.addEventListener('blur', () => {
-            setTimeout(() => list.classList.add('hidden'), 200);
-        });
-    </script>
-</body>
-</html>
-
-
-<!DOCTYPE html>
-
-
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.16/dist/tailwind.min.css" rel="stylesheet">
-    <title>Card Grid</title>
-</head>
-<body class="bg-gray-100 min-h-screen">
-    <div class="container mx-auto px-4 py-8">
-        <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">
-            <!-- Card 1 -->
-            <div class="bg-white rounded-md shadow-lg p-4 flex flex-col">
-                <img class="h-40 w-full object-cover rounded-md mb-4" src="https://cdn.glitch.global/85d7d8fd-6896-409c-9553-6a1f802e8123/webdevelopment.jpg?v=1680555064882" alt="Card Title 1 Image">
-                <h3 class="text-xl font-semibold">Web Development</h3>
-                <p class="mt-2 text-gray-600">Web Development</p>
-                <a href="service1.html" class="mt-auto text-center bg-blue-500 hover:bg-blue-600 text-white font-bold py-2 px-4 rounded-md">See the Providers</a>
-            </div>
-            <!-- Card 2 -->
-            <div class="bg-white rounded-md shadow-lg p-4 flex flex-col">
-                <img class="h-40 w-full object-cover rounded-md mb-4" src="https://cdn.glitch.global/85d7d8fd-6896-409c-9553-6a1f802e8123/design.jpg?v=1680554936368" alt="Card Title 2 Image">
-                <h3 class="text-xl font-semibold">Design</h3>
-                <p class="mt-2 text-gray-600">Design</p>
-                <a href="page2.html" class="mt-auto text-center bg-blue-500 hover:bg-blue-600 text-white font-bold py-2 px-4 rounded-md">See the Providers</a>
-            </div>
-            <!-- Card 3 -->
-            <div class="bg-white rounded-md shadow-lg p-4 flex flex-col">
-                <img class="h-40 w-full object-cover rounded-md mb-4" src="https://cdn.glitch.global/85d7d8fd-6896-409c-9553-6a1f802e8123/mechanic.jpg?v=1680554939742" alt="Card Title 1 Image">
-                <h3 class="text-xl font-semibold">Mechanic</h3>
-                <p class="mt-2 text-gray-600">This is a description for card 3.</p>
-                <a href="page1.html" class="mt-auto text-center bg-blue-500 hover:bg-blue-600 text-white font-bold py-2 px-4 rounded-md">See the Providers</a>
-            </div>
-          <!-- Card 4 -->
-            <div class="bg-white rounded-md shadow-lg p-4 flex flex-col">
-                <img class="h-40 w-full object-cover rounded-md mb-4" src="https://cdn.glitch.global/85d7d8fd-6896-409c-9553-6a1f802e8123/photographer.jpg?v=1680554942315" alt="Card Title 1 Image">
-                <h3 class="text-xl font-semibold">Photographer</h3>
-                <p class="mt-2 text-gray-600">This is a description for card 4.</p>
-                <a href="page1.html" class="mt-auto text-center bg-blue-500 hover:bg-blue-600 text-white font-bold py-2 px-4 rounded-md">See the Providers</a>
-            </div>
-          <!-- Card 5 -->
-            <div class="bg-white rounded-md shadow-lg p-4 flex flex-col">
-                <img class="h-40 w-full object-cover rounded-md mb-4" src="https://cdn.glitch.global/85d7d8fd-6896-409c-9553-6a1f802e8123/plumbing.jpg?v=1680554944355" alt="Card Title 1 Image">
-                <h3 class="text-xl font-semibold">Plumber</h3>
-                <p class="mt-2 text-gray-600">This is a description for card 5.</p>
-                <a href="page1.html" class="mt-auto text-center bg-blue-500 hover:bg-blue-600 text-white font-bold py-2 px-4 rounded-md">See the Providers</a>
-            </div>
-          <!-- Card 6 -->
-            <div class="bg-white rounded-md shadow-lg p-4 flex flex-col">
-                <img class="h-40 w-full object-cover rounded-md mb-4" src="https://cdn.glitch.global/85d7d8fd-6896-409c-9553-6a1f802e8123/translation.jpg?v=1680554945801" alt="Card Title 1 Image">
-                <h3 class="text-xl font-semibold">Translation</h3>
-                <p class="mt-2 text-gray-600">This is a description for card 6.</p>
-                <a href="page1.html" class="mt-auto text-center bg-blue-500 hover:bg-blue-600 text-white font-bold py-2 px-4 rounded-md">See the Providers</a>
-            </div>
-          <!-- Card 7 -->
-            <div class="bg-white rounded-md shadow-lg p-4 flex flex-col">
-                <img class="h-40 w-full object-cover rounded-md mb-4" src="https://cdn.glitch.global/85d7d8fd-6896-409c-9553-6a1f802e8123/videgrapger.jpg?v=1680554947471" alt="Card Title 1 Image">
-                <h3 class="text-xl font-semibold">Videographer</h3>
-                <p class="mt-2 text-gray-600">This is a description for card 7.</p>
-                <a href="page1.html" class="mt-auto text-center bg-blue-500 hover:bg-blue-600 text-white font-bold py-2 px-4 rounded-md">See the Providers</a>
-            </div>
-          <!-- Card 8 -->
-            <div class="bg-white rounded-md shadow-lg p-4 flex flex-col">
-                <img class="h-40 w-full object-cover rounded-md mb-4" src="https://cdn.glitch.global/85d7d8fd-6896-409c-9553-6a1f802e8123/voiceover.jpg?v=1680554949010" alt="Card Title 1 Image">
-                <h3 class="text-xl font-semibold">Voice Over</h3>
-                <p class="mt-2 text-gray-600">This is a description for card 8.</p>
-                <a href="page1.html" class="mt-auto text-center bg-blue-500 hover:bg-blue-600 text-white font-bold py-2 px-4 rounded-md">See the Providers</a>
-            </div>
-          <!-- Card 9 -->
-            <div class="bg-white rounded-md shadow-lg p-4 flex flex-col">
-                <img class="h-40 w-full object-cover rounded-md mb-4" src="https://cdn.glitch.global/85d7d8fd-6896-409c-9553-6a1f802e8123/writing.jpg?v=1680554950323" alt="Card Title 1 Image">
-                <h3 class="text-xl font-semibold">Writing</h3>
-                <p class="mt-2 text-gray-600">This is a description for card 9.</p>
-                <a href="page1.html" class="mt-auto text-center bg-blue-500 hover:bg-blue-600 text-white font-bold py-2 px-4 rounded-md">See the Providers</a>
-            </div>
-          <!-- Card 10 -->
-            <div class="bg-white rounded-md shadow-lg p-4 flex flex-col">
-                <img class="h-40 w-full object-cover rounded-md mb-4" src="https://cdn.glitch.global/85d7d8fd-6896-409c-9553-6a1f802e8123/Itsupport?v=1679555732850" alt="Card Title 1 Image">
-                <h3 class="text-xl font-semibold">IT Support</h3>
-                <p class="mt-2 text-gray-600">This is a description for card 10.</p>
-                <a href="page1.html" class="mt-auto text-center bg-blue-500 hover:bg-blue-600 text-white font-bold py-2 px-4 rounded-md">See the Providers</a>
-            </div>
-          
-            <!-- Add more cards as needed -->
-        </div>
-    </div>
+  <script src="script.js"></script>  
 </body>
 </html>
