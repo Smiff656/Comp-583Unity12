@@ -1,38 +1,85 @@
 <!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Service Providers</title>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/tailwindcss/2.2.16/tailwind.min.css">
+<html>
+  <head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Service Providers</title>
 </head>
-<body class="bg-gray-100">
-    <div class="container mx-auto">
-        <h1 class="text-3xl font-bold my-4">Service Providers</h1>
-        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-            <!-- Service provider card -->
-            <div class="bg-white rounded-lg overflow-hidden shadow-md">
-                <img class="h-64 w-full object-cover" src="https://images.unsplash.com/photo-1519710164239-da123dc03ef4" alt="Service provider image">
-                <div class="p-4">
-                    <h2 class="text-xl font-bold">Service Provider Name</h2>
-                    <p class="text-gray-700 my-2">Service Provided: <span class="text-gray-900 font-bold">Service Name</span></p>
-                    <p class="text-gray-700 my-2">Location: <span class="text-gray-900 font-bold">City, State</span></p>
-                    <p class="text-gray-700 my-2">Experience: <span class="text-gray-900 font-bold">X years</span></p>
-                    <a href="#" class="text-indigo-600 hover:text-indigo-900 font-bold">View Profile</a>
-                </div>
-            </div>
-            <!-- Service provider card (repeat for additional providers) -->
-            <div class="bg-white rounded-lg overflow-hidden shadow-md">
-                <img class="h-64 w-full object-cover" src="https://images.unsplash.com/photo-1519710164239-da123dc03ef4" alt="Service provider image">
-                <div class="p-4">
-                    <h2 class="text-xl font-bold">Service Provider Name</h2>
-                    <p class="text-gray-700 my-2">Service Provided: <span class="text-gray-900 font-bold">Service Name</span></p>
-                    <p class="text-gray-700 my-2">Location: <span class="text-gray-900 font-bold">City, State</span></p>
-                    <p class="text-gray-700 my-2">Experience: <span class="text-gray-900 font-bold">X years</span></p>
-                    <a href="#" class="text-indigo-600 hover:text-indigo-900 font-bold">View Profile</a>
-                </div>
-            </div>
-        </div>
+
+<body>
+  
+  <h2>Service Providers</h2>
+  <div class="provider-card">
+    <div class="provider-info">
+      <h3>Web Development</h3>
+      <ul>
+        <li>Web development involves the creation, design, and maintenance of websites and web applications. A skilled web developer can help you build a website that looks great, is easy to navigate, and meets your specific business needs. Whether you need a simple brochure-style website, a complex e-commerce site, or a custom web application, a web developer can help bring your vision to life. They can create responsive designs that work seamlessly on desktop, tablet, and mobile devices, and ensure that your site is optimized for search engines. With expertise in various programming languages and frameworks, web developers can help you develop and maintain a robust online presence for your business.</li>
+      </ul>
     </div>
+  </div>
+  
+  
 </body>
+  
+  <head>
+    <title>Service Providers</title>
+    <style>
+      .container {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-around;
+        align-items: center;
+        padding: 20px;
+      }
+      .card {
+        background-color: #fff;
+        border-radius: 5px;
+        box-shadow: 0 3px 6px rgba(0, 0, 0, 0.3);
+        display: flex;
+        flex-direction: column;
+        margin: 10px;
+        width: 300px;
+      }
+      .card img {
+        border-top-left-radius: 5px;
+        border-top-right-radius: 5px;
+        height: 200px;
+        object-fit: cover;
+        width: 100%;
+      }
+      .card h3 {
+        font-size: 24px;
+        margin: 10px;
+        text-align: center;
+      }
+      .card p {
+        font-size: 16px;
+        margin: 10px;
+        text-align: justify;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>Service Providers</h1>
+    <div class="container">
+      <div class="card">
+        <img src="https://cdn.glitch.global/85d7d8fd-6896-409c-9553-6a1f802e8123/2.jpg?v=1680583893914" alt="Provider 1">
+        <h3>Provider 1</h3>
+        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse suscipit urna in odio sollicitudin, eget varius dui commodo. Nam luctus feugiat urna, vitae vestibulum massa volutpat ac. Sed rutrum blandit tortor id semper.</p>
+        <a href="provider1.html">See the services</a>
+      </div>
+      <div class="card">
+        <img src="https://cdn.glitch.global/85d7d8fd-6896-409c-9553-6a1f802e8123/2.jpg?v=1680583893914" alt="Provider 2">
+        <h3>Provider 2</h3>
+        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse suscipit urna in odio sollicitudin, eget varius dui commodo. Nam luctus feugiat urna, vitae vestibulum massa volutpat ac. Sed rutrum blandit tortor id semper.</p>
+        <a href="provider2.html">See the services</a>
+      </div>
+      <div class="card">
+        <img src="https://cdn.glitch.global/85d7d8fd-6896-409c-9553-6a1f802e8123/2.jpg?v=1680583893914" alt="Provider 3">
+        <h3>Provider 3</h3>
+        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse suscipit urna in odio sollicitudin, eget varius dui commodo. Nam luctus feugiat urna, vitae vestibulum massa volutpat ac. Sed rutrum blandit tortor id semper.</p>
+        <a href="provider3.html">See the services</a>
+      </div>
+    </div>
+  </body>
 </html>
