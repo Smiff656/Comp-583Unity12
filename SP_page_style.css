@@ -9,7 +9,7 @@ h1 {
   font-weight: bold;
   margin: 40px 0 20px;
   text-align: center;
-  color: #1dbf73;
+  color: #1AA7EC;
 }
 form {
   max-width: 500px;
@@ -40,7 +40,7 @@ textarea {
   resize: none;
 }
 input[type="submit"] {
-  background-color: #1dbf73;
+  background-color: #1AA7EC;
   color: #ffffff;
   padding: 14px 20px;
   margin-top: 10px;
@@ -52,7 +52,7 @@ input[type="submit"]:hover {
   background-color: #159b5c;
 }
 label {
-  color: #1dbf73;
+  color: #1AA7EC;
   font-weight: bold;
 }
 
