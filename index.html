@@ -31,12 +31,10 @@
            <li class="navbar__item">
                 <a href="/contact.html" class="navbar__links">Contact</a>
             </li>
-            <li class="navbar__btn">
-                <a href="/" class="button">Sign Up</a>
-            </li>
+         <button class="btnLogin-popup">LogIn</button> 
         </ul>
     </div>
-  </nav>
+  </nav> 
   <!-- Hero Section-->
   <div class="main">
     <div class="main__container">
@@ -52,6 +50,82 @@
     </div>
   </div>
 
+<!-- Login Section-->
+    <div class="wrapper">
+        <span class="icon-close"><ion-icon name="close"></ion-icon></span>
+            
+        <div class="form-box login">
+            <h3>Log in</h3>
+            <from action="#">
+                <div class="input-box">
+                    <span class="icon"><ion-icon name="mail"></ion-icon></span>
+                        <input type="email" required>
+                        <label>Email</label>
+                </div>
+                <div class="input-box">
+                    <span class="icon"><ion-icon name="lock-open"></ion-icon></span>
+                        <input type="password" required>
+                        <label>Password</label>
+                </div>
+                <div class="remember-forgot">
+                    <label><input type="checkbox">Remeber me</label>
+                    <a href="#">Forgot Password?</a>
+                </div>
+                <button type="submit" class="btn">Login</button>
+                <div class="login-register">
+                    <p>Don't have an account?<a 
+                        href="#" class="register-link"> Register</a></p>
+                </div>
+             </from>
+        </div>
+
+        <div class="form-box register">
+            <h3>Registration</h3>
+            <from action="#">
+                <div class="input-box">
+                    <span class="icon"><ion-icon name="person"></ion-icon></span>
+                        <input type="text" required>
+                        <label>First Name</label>
+                </div>
+                <div class="input-box">
+                    <span class="icon"><ion-icon name="person"></ion-icon></span>
+                        <input type="text" required>
+                        <label>Last Name</label>
+                </div>
+                <div class="input-box">
+                    <span class="icon"><ion-icon name="person"></ion-icon></span>
+                        <input type="text" required>
+                        <label>Username</label>
+                </div>
+                <div class="input-box">
+                    <span class="icon"><ion-icon name="mail"></ion-icon></span>
+                        <input type="email" required>
+                        <label>Email</label>
+                </div>
+                <div class="input-box">
+                    <span class="icon"><ion-icon name="lock-open"></ion-icon></span>
+                        <input type="password" required>
+                        <label>Password</label>
+                </div>
+                <div class="remember-forgot">
+                    <label><input type="checkbox">I agree to all terms and conditions</label>
+                    
+                </div>
+                <button type="submit" class="btn">Register</button>
+                <div class="login-register">
+                    <p>Already have an account?<a 
+                        href="#" class="login-link"> LogIn</a></p>
+                </div>
+             </from>
+        </div>
+
+    </div>  
+
+
+
   <script src="app.js"></script>  
+  <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
+<script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
+
 </body>
 </html>
