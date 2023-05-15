@@ -153,3 +153,41 @@ textarea {
 		font-size: 1.5em;
 	}
 }
+
+.navbar{
+    background: black;
+    height: 100px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 1.2rem;
+    position: sticky;
+    top: 0;
+    z-index: 999;
+
+}
+
+.navbar__container {
+    display: flex;
+    justify-content: space-between;
+    height: 80px;
+    z-index: 1;
+    width: 100%;
+    margin: 0 auto;
+    padding: 0 50px;
+}
+
+#navbar__logo{    /*LOGO*/
+    background-color: #ff8177;
+    background-image: linear-gradient(to top,#a0d1f1 0%, #517bdc 100%); /*LOGO Color*/
+    background-size: 100%;
+    -webkit-background-clip: text;
+    -moz-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    -moz-text-fill-color: transparent;
+    display: flex;
+    align-items: center;  /*Brings to the center of the black background*/
+    cursor: pointer;
+    text-decoration: none;
+    font-size: 1.8rem;  /*LOGO Size*/
+} 
