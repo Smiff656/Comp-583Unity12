@@ -1,3 +1,6 @@
+import { app, auth } from "./firebase.js";
+import { signInWithEmailAndPassword, createUserWithEmailAndPassword } from "https://www.gstatic.com/firebasejs/9.22.0/firebase-auth.js";
+
 const menu = document.querySelector('#mobile-menu');
 const menuLinks = document.querySelector('.navbar__menu');
 
@@ -12,13 +15,73 @@ menu.addEventListener('click', function() {
     menuLinks.classList.toggle('active');
 });
 
+registerLink.addEventListener('click', () => {
+    wrapper.classList.add('active');
+});
 
+const registerForm = document.querySelector('#register-form');
 
-registerLink.addEventListener('click', ()=> {wrapper.classList.add('active');
+registerForm.addEventListener('submit', (e) => {
+    e.preventDefault(); // Prevent the form from submitting normally
+
+    const emailInput = document.querySelector('#register-email'); 
+    const passwordInput = document.querySelector('#register-password'); 
+
+    const email = emailInput.value;
+    const password = passwordInput.value;
+
+    createUserWithEmailAndPassword(auth, email, password)
+        .then((userCredential) => {
+            // Handle successful registration
+            const user = userCredential.user;
+            console.log('Registered user:', user);
+            wrapper.classList.remove('active'); // Hide the popup after successful registration
+            // Perform any additional actions after successful registration
+        })
+        .catch((error) => {
+            // Handle registration error
+            const errorCode = error.code;
+            const errorMessage = error.message;
+            console.log('Registration error:', errorCode, errorMessage);
+        });
 });
-loginLink.addEventListener('click', ()=> {wrapper.classList.remove('active');
+
+loginLink.addEventListener('click', () => {
+    wrapper.classList.add('active-popup');
+    wrapper.classList.remove('active');
 });
-btnPopup.addEventListener('click', ()=> {wrapper.classList.add('active-popup');
+
+const loginForm = document.querySelector('#login-form'); 
+
+loginForm.addEventListener('submit', (e) => {
+    e.preventDefault(); // Prevent the form from submitting normally
+
+    const emailInput = document.querySelector('#login-email'); 
+    const passwordInput = document.querySelector('#login-password'); 
+
+    const email = emailInput.value;
+    const password = passwordInput.value;
+
+    signInWithEmailAndPassword(auth, email, password)
+        .then((userCredential) => {
+            // Handle successful login
+            const user = userCredential.user;
+            console.log('Logged in user:', user);
+            wrapper.classList.remove('active-popup'); // Hide the popup after successful login
+            // Perform any additional actions after successful login
+        })
+        .catch((error) => {
+            // Handle login error
+            const errorCode = error.code;
+            const errorMessage = error.message;
+            console.log('Login error:', errorCode, errorMessage);
+        });
 });
-iconClose.addEventListener('click', ()=> {wrapper.classList.remove('active-popup');
+
+btnPopup.addEventListener('click', () => {
+    wrapper.classList.add('active-popup');
+});
+
+iconClose.addEventListener('click', () => {
+    wrapper.classList.remove('active-popup');
 });

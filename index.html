@@ -28,13 +28,11 @@
            <li class="navbar__item">
                 <a href="aboutus.html" class="navbar__links">About</a>
             </li>
-          <li class="navbar__item">
+            <li class="navbar__item">
                 <a href="contactus.html" class="navbar__links">Contact Us</a>
             </li>
           <li class="navbar__item">
                 <a href="profile.html" class="navbar__links">Profile</a>
-            </li>
-                    
          <button class="btnLogin-popup">LogIn</button> 
         </ul>
     </div>
@@ -60,15 +58,15 @@
             
         <div class="form-box login">
             <h3>Log in</h3>
-            <from action="#">
+            <form action="#" id="login-form">
                 <div class="input-box">
                     <span class="icon"><ion-icon name="mail"></ion-icon></span>
-                        <input type="email" required>
+                        <input type="email" id="login-email" required>
                         <label>Email</label>
                 </div>
                 <div class="input-box">
                     <span class="icon"><ion-icon name="lock-open"></ion-icon></span>
-                        <input type="password" required>
+                        <input type="password" id="login-password" required>
                         <label>Password</label>
                 </div>
                 <div class="remember-forgot">
@@ -80,36 +78,36 @@
                     <p>Don't have an account?<a 
                         href="#" class="register-link"> Register</a></p>
                 </div>
-             </from>
+             </form>
         </div>
           
 
         <div class="form-box register">
             <h3>Registration</h3>
-            <from action="#">
+            <form action="#" id="register-form">
                 <div class="input-box">
                     <span class="icon"><ion-icon name="person"></ion-icon></span>
-                        <input type="text" required>
+                        <input type="text" id="register-fn" required>
                         <label>First Name</label>
                 </div>
                 <div class="input-box">
                     <span class="icon"><ion-icon name="person"></ion-icon></span>
-                        <input type="text" required>
+                        <input type="text" id="register-ln" required>
                         <label>Last Name</label>
                
                 </div>
                 <div class="input-box">
                     <span class="icon"><ion-icon name="mail"></ion-icon></span>
-                        <input type="email" required>
+                        <input type="email" id="register-email" required>
                         <label>Email</label>
                 </div>
                 <div class="input-box">
                     <span class="icon"><ion-icon name="lock-open"></ion-icon></span>
-                        <input type="password" required>
+                        <input type="password" id="register-password" required>
                         <label>Password</label>
                 </div>
                 <div class="remember-forgot">
-                    <label><input type="checkbox">I agree to all terms and conditions</label>
+                    <label><input type="checkbox" id="checkbox-id">I agree to all terms and conditions</label>
                     
                 </div>
                 <button type="submit" class="btn">Register</button>
@@ -117,14 +115,14 @@
                     <p>Already have an account?<a 
                         href="#" class="login-link"> LogIn</a></p>
                 </div>
-             </from>
+             </form>
         </div>
 
     </div>  
 
 
-
-  <script src="app.js"></script>  
+  <script type="module" src="firebase.js"></script>
+  <script type="module" src="app.js"></script>  
   <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
 <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
 
