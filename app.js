@@ -36,7 +36,8 @@ registerForm.addEventListener('submit', (e) => {
             const user = userCredential.user;
             console.log('Registered user:', user);
             wrapper.classList.remove('active'); // Hide the popup after successful registration
-            // Perform any additional actions after successful registration
+            // Jump to profile page
+            window.location.href = 'profile.html';
         })
         .catch((error) => {
             // Handle registration error
@@ -68,7 +69,8 @@ loginForm.addEventListener('submit', (e) => {
             const user = userCredential.user;
             console.log('Logged in user:', user);
             wrapper.classList.remove('active-popup'); // Hide the popup after successful login
-            // Perform any additional actions after successful login
+            // Jump to profile page
+            window.location.href = 'profile.html';
         })
         .catch((error) => {
             // Handle login error
